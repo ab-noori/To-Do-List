@@ -1,5 +1,5 @@
 {
-  "name": "webpack-boilerplate",
+  "name": "to-do-list",
   "version": "1.0.0",
   "description": "<a name=\"readme-top\"></a>",
   "main": "index.js",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ab-noori/Webpack-Boilerplate.git"
+    "url": "git+https://github.com/ab-noori/To-Do-List.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ab-noori/Webpack-Boilerplate/issues"
+    "url": "https://github.com/ab-noori/To-Do-List/issues"
   },
-  "homepage": "https://github.com/ab-noori/Webpack-Boilerplate#readme",
+  "homepage": "https://github.com/ab-noori/To-Do-List#readme",
   "devDependencies": {
     "@babel/core": "^7.21.0",
     "@babel/preset-env": "^7.20.2",
