@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 $primary-color: #dddada;
-$secondary-color: #ffffff;
+$secondary-color: #fff;
 $box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
 
 * {
@@ -9,7 +9,6 @@ $box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
   padding: 0;
   box-sizing: border-box;
 }
-
 
 body {
   background-color: $primary-color;
@@ -104,15 +103,14 @@ img {
     font-size: 18px;
     padding-left: 10px;
     border-bottom: 1px solid gray;
-  
+
     &::placeholder {
       font-style: italic;
     }
-  
+
     &:focus {
       outline: 0.3px solid greenyellow;
       outline-style: dotted;
     }
   }
 }
-
