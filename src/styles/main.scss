@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-$primary-color: #0f0542;
-$secondary-color: #f4f4f4;
+$primary-color: #dddada;
+$secondary-color: #ffffff;
 $box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
+
 
 body {
   background-color: $primary-color;
@@ -25,21 +28,25 @@ body {
   background-color: $secondary-color;
   border-radius: 10px;
   box-shadow: $box-shadow;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   padding: 50px 20px;
-  text-align: center;
   max-width: 100%;
-  width: 800px;
+  width: 700px;
 }
 
-h3 {
+h1 {
   margin: 0;
   opacity: 0.5;
+  align-self: center;
   letter-spacing: 2px;
 }
 
 img {
   width: 100px;
   margin-bottom: 20px;
+  align-self: center;
 }
 
 .joke {
@@ -52,7 +59,7 @@ img {
 
 .btn {
   background-color: $primary-color;
-  color: $secondary-color;
+  color: #794242;
   border: 0;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
@@ -68,3 +75,44 @@ img {
     outline: 0;
   }
 }
+
+#todo-list {
+  display: flex;
+  flex-direction: column;
+
+  & li {
+    padding: 10px;
+    list-style-type: none;
+    border-bottom: 1px solid gray;
+    display: flex;
+    gap: 20px;
+    position: relative;
+
+    &::after {
+      content: '\2807';
+      font-size: 20px;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+  }
+
+  & #add-new-task {
+    height: 30px;
+    width: 100%;
+    border: none;
+    font-size: 18px;
+    padding-left: 10px;
+    border-bottom: 1px solid gray;
+  
+    &::placeholder {
+      font-style: italic;
+    }
+  
+    &:focus {
+      outline: 0.3px solid greenyellow;
+      outline-style: dotted;
+    }
+  }
+}
+
