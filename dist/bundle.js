@@ -49,7 +49,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n  box-sizing: border-box;\n}\n\nbody {\n  background-color: #0f0542;\n  font-family: \"Roboto\", sans-serif;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  height: 100vh;\n  overflow: hidden;\n  margin: 0;\n  padding: 20px;\n}\n\n.container {\n  background-color: #f4f4f4;\n  border-radius: 10px;\n  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);\n  padding: 50px 20px;\n  text-align: center;\n  max-width: 100%;\n  width: 800px;\n}\n\nh3 {\n  margin: 0;\n  opacity: 0.5;\n  letter-spacing: 2px;\n}\n\nimg {\n  width: 100px;\n  margin-bottom: 20px;\n}\n\n.joke {\n  font-size: 30px;\n  letter-spacing: 1px;\n  line-height: 40px;\n  margin: 50px auto;\n  max-width: 600px;\n}\n\n.btn {\n  background-color: #0f0542;\n  color: #f4f4f4;\n  border: 0;\n  border-radius: 10px;\n  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);\n  padding: 14px 40px;\n  font-size: 16px;\n  cursor: pointer;\n}\n.btn:active {\n  transform: scale(0.98);\n}\n.btn:focus {\n  outline: 0;\n}", "",{"version":3,"sources":["webpack://./src/styles/main.scss"],"names":[],"mappings":"AAMA;EACE,sBAAA;AAJF;;AAOA;EACE,yBATc;EAUd,iCAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,uBAAA;EACA,aAAA;EACA,gBAAA;EACA,SAAA;EACA,aAAA;AAJF;;AAOA;EACE,yBArBgB;EAsBhB,mBAAA;EACA,wEAtBW;EAuBX,kBAAA;EACA,kBAAA;EACA,eAAA;EACA,YAAA;AAJF;;AAOA;EACE,SAAA;EACA,YAAA;EACA,mBAAA;AAJF;;AAOA;EACE,YAAA;EACA,mBAAA;AAJF;;AAOA;EACE,eAAA;EACA,mBAAA;EACA,iBAAA;EACA,iBAAA;EACA,gBAAA;AAJF;;AAOA;EACE,yBAnDc;EAoDd,cAnDgB;EAoDhB,SAAA;EACA,mBAAA;EACA,uEAAA;EACA,kBAAA;EACA,eAAA;EACA,eAAA;AAJF;AAME;EACE,sBAAA;AAJJ;AAOE;EACE,UAAA;AALJ","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');\r\n\r\n$primary-color: #0f0542;\r\n$secondary-color: #f4f4f4;\r\n$box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);\r\n\r\n* {\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background-color: $primary-color;\r\n  font-family: 'Roboto', sans-serif;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  height: 100vh;\r\n  overflow: hidden;\r\n  margin: 0;\r\n  padding: 20px;\r\n}\r\n\r\n.container {\r\n  background-color: $secondary-color;\r\n  border-radius: 10px;\r\n  box-shadow: $box-shadow;\r\n  padding: 50px 20px;\r\n  text-align: center;\r\n  max-width: 100%;\r\n  width: 800px;\r\n}\r\n\r\nh3 {\r\n  margin: 0;\r\n  opacity: 0.5;\r\n  letter-spacing: 2px;\r\n}\r\n\r\nimg {\r\n  width: 100px;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.joke {\r\n  font-size: 30px;\r\n  letter-spacing: 1px;\r\n  line-height: 40px;\r\n  margin: 50px auto;\r\n  max-width: 600px;\r\n}\r\n\r\n.btn {\r\n  background-color: $primary-color;\r\n  color: $secondary-color;\r\n  border: 0;\r\n  border-radius: 10px;\r\n  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);\r\n  padding: 14px 40px;\r\n  font-size: 16px;\r\n  cursor: pointer;\r\n\r\n  &:active {\r\n    transform: scale(0.98);\r\n  }\r\n\r\n  &:focus {\r\n    outline: 0;\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "@charset \"UTF-8\";\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nbody {\n  background-color: #dddada;\n  font-family: \"Roboto\", sans-serif;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  height: 100vh;\n  overflow: hidden;\n  margin: 0;\n  padding: 20px;\n}\n\n.container {\n  background-color: #fff;\n  border-radius: 10px;\n  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);\n  display: flex;\n  flex-direction: column;\n  gap: 15px;\n  padding: 50px 20px;\n  max-width: 100%;\n  width: 700px;\n}\n\nh1 {\n  margin: 0;\n  opacity: 0.5;\n  align-self: center;\n  letter-spacing: 2px;\n}\n\nimg {\n  width: 100px;\n  margin-bottom: 20px;\n  align-self: center;\n}\n\n.joke {\n  font-size: 30px;\n  letter-spacing: 1px;\n  line-height: 40px;\n  margin: 50px auto;\n  max-width: 600px;\n}\n\n.btn {\n  background-color: #dddada;\n  color: #794242;\n  border: 0;\n  border-radius: 10px;\n  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);\n  padding: 14px 40px;\n  font-size: 16px;\n  cursor: pointer;\n}\n.btn:active {\n  transform: scale(0.98);\n}\n.btn:focus {\n  outline: 0;\n}\n\n#todo-list {\n  display: flex;\n  flex-direction: column;\n}\n#todo-list li {\n  padding: 10px;\n  list-style-type: none;\n  border-bottom: 1px solid gray;\n  display: flex;\n  gap: 20px;\n  position: relative;\n}\n#todo-list li::after {\n  content: \"⠇\";\n  font-size: 20px;\n  position: absolute;\n  top: 5px;\n  right: 5px;\n}\n#todo-list #add-new-task {\n  height: 30px;\n  width: 100%;\n  border: none;\n  font-size: 18px;\n  padding-left: 10px;\n  border-bottom: 1px solid gray;\n}\n#todo-list #add-new-task::placeholder {\n  font-style: italic;\n}\n#todo-list #add-new-task:focus {\n  outline: 0.3px solid greenyellow;\n  outline-style: dotted;\n}", "",{"version":3,"sources":["webpack://./src/styles/main.scss"],"names":[],"mappings":"AAAA,gBAAgB;AAMhB;EACE,SAAA;EACA,UAAA;EACA,sBAAA;AAHF;;AAMA;EACE,yBAXc;EAYd,iCAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,uBAAA;EACA,aAAA;EACA,gBAAA;EACA,SAAA;EACA,aAAA;AAHF;;AAMA;EACE,sBAvBgB;EAwBhB,mBAAA;EACA,wEAxBW;EAyBX,aAAA;EACA,sBAAA;EACA,SAAA;EACA,kBAAA;EACA,eAAA;EACA,YAAA;AAHF;;AAMA;EACE,SAAA;EACA,YAAA;EACA,kBAAA;EACA,mBAAA;AAHF;;AAMA;EACE,YAAA;EACA,mBAAA;EACA,kBAAA;AAHF;;AAMA;EACE,eAAA;EACA,mBAAA;EACA,iBAAA;EACA,iBAAA;EACA,gBAAA;AAHF;;AAMA;EACE,yBAzDc;EA0Dd,cAAA;EACA,SAAA;EACA,mBAAA;EACA,uEAAA;EACA,kBAAA;EACA,eAAA;EACA,eAAA;AAHF;AAKE;EACE,sBAAA;AAHJ;AAME;EACE,UAAA;AAJJ;;AAQA;EACE,aAAA;EACA,sBAAA;AALF;AAOE;EACE,aAAA;EACA,qBAAA;EACA,6BAAA;EACA,aAAA;EACA,SAAA;EACA,kBAAA;AALJ;AAOI;EACE,YAAA;EACA,eAAA;EACA,kBAAA;EACA,QAAA;EACA,UAAA;AALN;AASE;EACE,YAAA;EACA,WAAA;EACA,YAAA;EACA,eAAA;EACA,kBAAA;EACA,6BAAA;AAPJ;AASI;EACE,kBAAA;AAPN;AAUI;EACE,gCAAA;EACA,qBAAA;AARN","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');\r\n\r\n$primary-color: #dddada;\r\n$secondary-color: #fff;\r\n$box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);\r\n\r\n* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background-color: $primary-color;\r\n  font-family: 'Roboto', sans-serif;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  height: 100vh;\r\n  overflow: hidden;\r\n  margin: 0;\r\n  padding: 20px;\r\n}\r\n\r\n.container {\r\n  background-color: $secondary-color;\r\n  border-radius: 10px;\r\n  box-shadow: $box-shadow;\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 15px;\r\n  padding: 50px 20px;\r\n  max-width: 100%;\r\n  width: 700px;\r\n}\r\n\r\nh1 {\r\n  margin: 0;\r\n  opacity: 0.5;\r\n  align-self: center;\r\n  letter-spacing: 2px;\r\n}\r\n\r\nimg {\r\n  width: 100px;\r\n  margin-bottom: 20px;\r\n  align-self: center;\r\n}\r\n\r\n.joke {\r\n  font-size: 30px;\r\n  letter-spacing: 1px;\r\n  line-height: 40px;\r\n  margin: 50px auto;\r\n  max-width: 600px;\r\n}\r\n\r\n.btn {\r\n  background-color: $primary-color;\r\n  color: #794242;\r\n  border: 0;\r\n  border-radius: 10px;\r\n  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);\r\n  padding: 14px 40px;\r\n  font-size: 16px;\r\n  cursor: pointer;\r\n\r\n  &:active {\r\n    transform: scale(0.98);\r\n  }\r\n\r\n  &:focus {\r\n    outline: 0;\r\n  }\r\n}\r\n\r\n#todo-list {\r\n  display: flex;\r\n  flex-direction: column;\r\n\r\n  & li {\r\n    padding: 10px;\r\n    list-style-type: none;\r\n    border-bottom: 1px solid gray;\r\n    display: flex;\r\n    gap: 20px;\r\n    position: relative;\r\n\r\n    &::after {\r\n      content: '\\2807';\r\n      font-size: 20px;\r\n      position: absolute;\r\n      top: 5px;\r\n      right: 5px;\r\n    }\r\n  }\r\n\r\n  & #add-new-task {\r\n    height: 30px;\r\n    width: 100%;\r\n    border: none;\r\n    font-size: 18px;\r\n    padding-left: 10px;\r\n    border-bottom: 1px solid gray;\r\n\r\n    &::placeholder {\r\n      font-style: italic;\r\n    }\r\n\r\n    &:focus {\r\n      outline: 0.3px solid greenyellow;\r\n      outline-style: dotted;\r\n    }\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -535,13 +535,13 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
-/***/ "./src/assets/laughing.svg":
-/*!*********************************!*\
-  !*** ./src/assets/laughing.svg ***!
-  \*********************************/
+/***/ "./src/assets/todo-list.svg":
+/*!**********************************!*\
+  !*** ./src/assets/todo-list.svg ***!
+  \**********************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "laughing.svg";
+module.exports = __webpack_require__.p + "todo-list.svg";
 
 /***/ }),
 
@@ -4676,12 +4676,52 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _generateJoke_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./generateJoke.js */ "./src/generateJoke.js");
 /* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/main.scss */ "./src/styles/main.scss");
-/* harmony import */ var _assets_laughing_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/laughing.svg */ "./src/assets/laughing.svg");
+/* harmony import */ var _assets_todo_list_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/todo-list.svg */ "./src/assets/todo-list.svg");
 
 
 
+
+// Define the to-do tasks as an array of objects
+var tasks = [{
+  description: 'Buy groceries',
+  completed: false,
+  index: 0
+}, {
+  description: 'Do laundry',
+  completed: true,
+  index: 1
+}, {
+  description: 'Clean the house',
+  completed: false,
+  index: 2
+}];
+
+// Get a reference to the HTML ul element
+var todoList = document.getElementById('todo-list');
+
+// Loop over the tasks array and create an HTML li element for each task
+tasks.forEach(function (task) {
+  // Create a new li element
+  var listItem = document.createElement('li');
+
+  // Set the text content of the li element to the task description
+  var span = document.createElement('span');
+  span.textContent = task.description;
+  var checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  listItem.appendChild(checkbox);
+  listItem.appendChild(span);
+
+  // If the task is completed, add a "completed" class to the li element
+  if (task.completed) {
+    listItem.classList.add('completed');
+  }
+
+  // Add the li element to the ul element
+  todoList.appendChild(listItem);
+});
 var laughImg = document.getElementById('laughImg');
-laughImg.src = _assets_laughing_svg__WEBPACK_IMPORTED_MODULE_2__;
+laughImg.src = _assets_todo_list_svg__WEBPACK_IMPORTED_MODULE_2__;
 (0,_generateJoke_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
 var jokeBtn = document.getElementById('jokBtn');
 jokeBtn.addEventListener('click', _generateJoke_js__WEBPACK_IMPORTED_MODULE_0__["default"]);

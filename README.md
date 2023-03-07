@@ -25,7 +25,7 @@
 
 -->
 
-> # Template Repository
+> # To-Do List
 ### Desktop view shoots for this project:
 
 | Desktop Veiw Representation|
@@ -58,7 +58,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [To-Do-List] <a name="about-project"></a>
 
 > Describe your project in 1 or 2 sentences.
 
@@ -129,6 +129,9 @@ Install this project with:
 - To read data from local storage of browser.
 - To display data.
 - To remove data from local storage.
+
+### Run tests
+    npx eslint .
 
 ### Deployment
 
