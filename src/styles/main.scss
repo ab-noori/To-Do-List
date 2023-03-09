@@ -89,6 +89,7 @@ img {
 
     &::after {
       content: '\2807';
+      cursor: pointer;
       font-size: 20px;
       position: absolute;
       top: 5px;
@@ -96,7 +97,7 @@ img {
     }
   }
 
-  & #add-new-task {
+  & #new-task {
     height: 30px;
     width: 100%;
     border: none;
