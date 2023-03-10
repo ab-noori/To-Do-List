@@ -123,11 +123,10 @@ Install this project with:
 
 
 ### Usage
+- Use following commands to run on your local system:
 
-- To use on your local system
-
-    npm run buil
-    npm run dev
+      npm run build
+      npm run dev
 
 ### Run tests
     npx eslint .
