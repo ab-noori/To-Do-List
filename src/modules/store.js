@@ -19,12 +19,21 @@ class Store {
       localStorage.setItem('tasks', JSON.stringify(tasks));
     }
 
-    // static updateTask = (el, editedTask) => {
-    //   const tasks = Store.getTasks();
-    //   const li = el.parentElement.parentElement;
-    //   const todoList = document.getElementById('todo-list');
-    //   const id = Array.prototype.indexOf.call(todoList.children, li);
-    // }
+    static updateTask = (el) => {
+      const editedTask = el.value;
+      const tasks = Store.getTasks();
+      const li = el.parentElement.parentElement.parentElement;
+      const todoList = document.getElementById('todo-list');
+      const id = Array.prototype.indexOf.call(todoList.children, li);
+
+      tasks.forEach((task) => {
+        if (task.index === id) {
+          task.description = editedTask;
+        }
+      });
+
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
 
     static removeTask = (el) => {
       const tasks = Store.getTasks();
