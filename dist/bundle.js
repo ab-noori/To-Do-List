@@ -65,12 +65,19 @@ _defineProperty(Store, "addTask", function (task) {
   tasks.push(task);
   localStorage.setItem('tasks', JSON.stringify(tasks));
 });
-// static updateTask = (el, editedTask) => {
-//   const tasks = Store.getTasks();
-//   const li = el.parentElement.parentElement;
-//   const todoList = document.getElementById('todo-list');
-//   const id = Array.prototype.indexOf.call(todoList.children, li);
-// }
+_defineProperty(Store, "updateTask", function (el) {
+  var editedTask = el.value;
+  var tasks = Store.getTasks();
+  var li = el.parentElement.parentElement.parentElement;
+  var todoList = document.getElementById('todo-list');
+  var id = Array.prototype.indexOf.call(todoList.children, li);
+  tasks.forEach(function (task) {
+    if (task.index === id) {
+      task.description = editedTask;
+    }
+  });
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+});
 _defineProperty(Store, "removeTask", function (el) {
   var tasks = Store.getTasks();
   var li = el.parentElement.parentElement;
@@ -192,7 +199,7 @@ _defineProperty(UI, "editTask", function (el) {
   var orgValue = el.parentElement.parentElement.childNodes[1].textContent;
   var editForm = document.createElement('form');
   editForm.id = 'edit-form';
-  el.parentElement.parentElement.childNodes[1].innerHTML = "\n\n    <form id=\"edit-form\">\n        <input type=\"text\" id=\"edit-task\" value=\"".concat(orgValue, "\">\n    </form>\n\n    ");
+  el.parentElement.parentElement.childNodes[1].innerHTML = "\n\n    <form id=\"edit-form\">\n        <input type=\"text\" class=\"edit-task\" value=\"".concat(orgValue, "\">\n    </form>\n\n    ");
   el.parentElement.parentElement.classList.add('edit-highlight');
   if (el.classList.contains('fa-trash')) {
     el.parentElement.parentElement.remove();
@@ -230,7 +237,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nbody {\n  background-color: #dddada;\n  font-family: \"Roboto\", sans-serif;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  height: 100vh;\n  overflow: hidden;\n  margin: 0;\n  padding: 20px;\n}\n\n.container {\n  background-color: #fff;\n  border-radius: 10px;\n  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);\n  display: flex;\n  flex-direction: column;\n  gap: 15px;\n  padding: 50px 20px;\n  max-width: 100%;\n  width: 700px;\n}\n\nh1 {\n  margin: 0;\n  opacity: 0.5;\n  align-self: center;\n  letter-spacing: 2px;\n}\n\nimg {\n  width: 100px;\n  margin-bottom: 20px;\n  align-self: center;\n}\n\n.joke {\n  font-size: 30px;\n  letter-spacing: 1px;\n  line-height: 40px;\n  margin: 50px auto;\n  max-width: 600px;\n}\n\n.btn {\n  background-color: #dddada;\n  color: #794242;\n  border: 0;\n  border-radius: 10px;\n  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);\n  padding: 14px 40px;\n  font-size: 16px;\n  cursor: pointer;\n}\n.btn:active {\n  transform: scale(0.98);\n}\n.btn:focus {\n  outline: 0;\n}\n\n#todo-list {\n  display: flex;\n  flex-direction: column;\n}\n#todo-list li {\n  padding: 10px;\n  list-style-type: none;\n  border-bottom: 1px solid gray;\n  display: flex;\n  gap: 20px;\n  position: relative;\n}\n#todo-list li .edit {\n  font-weight: 1000;\n  color: green;\n  position: absolute;\n  right: 50px;\n  cursor: pointer;\n}\n#todo-list li .delete {\n  font-weight: 1000;\n  color: red;\n  position: absolute;\n  right: 15px;\n  cursor: pointer;\n}\n#todo-list #new-task {\n  height: 30px;\n  width: 100%;\n  border: none;\n  font-size: 18px;\n  padding-left: 10px;\n  border-bottom: 1px solid gray;\n}\n#todo-list #new-task::placeholder {\n  font-style: italic;\n}\n#todo-list #new-task:focus {\n  outline: 0.3px solid greenyellow;\n  outline-style: dotted;\n}\n#todo-list #edit-task {\n  width: 100%;\n  border: none;\n  font-size: 18px;\n  outline: 1px solid red;\n  outline-style: dotted;\n}", "",{"version":3,"sources":["webpack://./src/styles/main.scss"],"names":[],"mappings":"AAMA;EACE,SAAA;EACA,UAAA;EACA,sBAAA;AAJF;;AAOA;EACE,yBAXc;EAYd,iCAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,uBAAA;EACA,aAAA;EACA,gBAAA;EACA,SAAA;EACA,aAAA;AAJF;;AAOA;EACE,sBAvBgB;EAwBhB,mBAAA;EACA,wEAxBW;EAyBX,aAAA;EACA,sBAAA;EACA,SAAA;EACA,kBAAA;EACA,eAAA;EACA,YAAA;AAJF;;AAOA;EACE,SAAA;EACA,YAAA;EACA,kBAAA;EACA,mBAAA;AAJF;;AAOA;EACE,YAAA;EACA,mBAAA;EACA,kBAAA;AAJF;;AAOA;EACE,eAAA;EACA,mBAAA;EACA,iBAAA;EACA,iBAAA;EACA,gBAAA;AAJF;;AAOA;EACE,yBAzDc;EA0Dd,cAAA;EACA,SAAA;EACA,mBAAA;EACA,uEAAA;EACA,kBAAA;EACA,eAAA;EACA,eAAA;AAJF;AAME;EACE,sBAAA;AAJJ;AAOE;EACE,UAAA;AALJ;;AASA;EACE,aAAA;EACA,sBAAA;AANF;AAQE;EACE,aAAA;EACA,qBAAA;EACA,6BAAA;EACA,aAAA;EACA,SAAA;EACA,kBAAA;AANJ;AAQI;EACE,iBAAA;EACA,YAAA;EACA,kBAAA;EACA,WAAA;EACA,eAAA;AANN;AASI;EACE,iBAAA;EACA,UAAA;EACA,kBAAA;EACA,WAAA;EACA,eAAA;AAPN;AAWE;EACE,YAAA;EACA,WAAA;EACA,YAAA;EACA,eAAA;EACA,kBAAA;EACA,6BAAA;AATJ;AAWI;EACE,kBAAA;AATN;AAYI;EACE,gCAAA;EACA,qBAAA;AAVN;AAcE;EACE,WAAA;EACA,YAAA;EACA,eAAA;EACA,sBAAA;EACA,qBAAA;AAZJ","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');\r\n\r\n$primary-color: #dddada;\r\n$secondary-color: #fff;\r\n$box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);\r\n\r\n* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background-color: $primary-color;\r\n  font-family: 'Roboto', sans-serif;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  height: 100vh;\r\n  overflow: hidden;\r\n  margin: 0;\r\n  padding: 20px;\r\n}\r\n\r\n.container {\r\n  background-color: $secondary-color;\r\n  border-radius: 10px;\r\n  box-shadow: $box-shadow;\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 15px;\r\n  padding: 50px 20px;\r\n  max-width: 100%;\r\n  width: 700px;\r\n}\r\n\r\nh1 {\r\n  margin: 0;\r\n  opacity: 0.5;\r\n  align-self: center;\r\n  letter-spacing: 2px;\r\n}\r\n\r\nimg {\r\n  width: 100px;\r\n  margin-bottom: 20px;\r\n  align-self: center;\r\n}\r\n\r\n.joke {\r\n  font-size: 30px;\r\n  letter-spacing: 1px;\r\n  line-height: 40px;\r\n  margin: 50px auto;\r\n  max-width: 600px;\r\n}\r\n\r\n.btn {\r\n  background-color: $primary-color;\r\n  color: #794242;\r\n  border: 0;\r\n  border-radius: 10px;\r\n  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);\r\n  padding: 14px 40px;\r\n  font-size: 16px;\r\n  cursor: pointer;\r\n\r\n  &:active {\r\n    transform: scale(0.98);\r\n  }\r\n\r\n  &:focus {\r\n    outline: 0;\r\n  }\r\n}\r\n\r\n#todo-list {\r\n  display: flex;\r\n  flex-direction: column;\r\n\r\n  & li {\r\n    padding: 10px;\r\n    list-style-type: none;\r\n    border-bottom: 1px solid gray;\r\n    display: flex;\r\n    gap: 20px;\r\n    position: relative;\r\n\r\n    & .edit {\r\n      font-weight: 1000;\r\n      color: green;\r\n      position: absolute;\r\n      right: 50px;\r\n      cursor: pointer;\r\n    }    \r\n    \r\n    & .delete {\r\n      font-weight: 1000;\r\n      color: red;\r\n      position: absolute;\r\n      right: 15px;\r\n      cursor: pointer;\r\n    }\r\n  }\r\n\r\n  & #new-task {\r\n    height: 30px;\r\n    width: 100%;\r\n    border: none;\r\n    font-size: 18px;\r\n    padding-left: 10px;\r\n    border-bottom: 1px solid gray;\r\n\r\n    &::placeholder {\r\n      font-style: italic;\r\n    }\r\n\r\n    &:focus {\r\n      outline: 0.3px solid greenyellow;\r\n      outline-style: dotted;\r\n    }\r\n  }\r\n\r\n  & #edit-task{\r\n    width: 100%;\r\n    border: none;\r\n    font-size: 18px;\r\n    outline: 1px solid red;\r\n    outline-style: dotted;\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "@charset \"UTF-8\";\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nbody {\n  background-color: #dddada;\n  font-family: \"Roboto\", sans-serif;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  height: 100vh;\n  overflow: hidden;\n  margin: 0;\n  padding: 20px;\n}\n\n.container {\n  background-color: #fff;\n  border-radius: 10px;\n  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);\n  display: flex;\n  flex-direction: column;\n  gap: 15px;\n  padding: 50px 20px;\n  max-width: 100%;\n  width: 700px;\n}\n\nh1 {\n  margin: 0;\n  opacity: 0.5;\n  align-self: center;\n  letter-spacing: 2px;\n}\n\nimg {\n  width: 100px;\n  margin-bottom: 20px;\n  align-self: center;\n}\n\n.joke {\n  font-size: 30px;\n  letter-spacing: 1px;\n  line-height: 40px;\n  margin: 50px auto;\n  max-width: 600px;\n}\n\n.btn {\n  background-color: #dddada;\n  color: #794242;\n  border: 0;\n  border-radius: 10px;\n  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);\n  padding: 14px 40px;\n  font-size: 16px;\n  cursor: pointer;\n}\n.btn:active {\n  transform: scale(0.98);\n}\n.btn:focus {\n  outline: 0;\n}\n\n#todo-list {\n  display: flex;\n  flex-direction: column;\n}\n#todo-list #new-task {\n  height: 30px;\n  width: 100%;\n  border: none;\n  font-size: 18px;\n  padding-left: 10px;\n  border-bottom: 1px solid gray;\n  position: relative;\n}\n#todo-list #new-task::placeholder {\n  font-style: italic;\n}\n#todo-list #new-task:focus {\n  outline: 0.3px solid greenyellow;\n  outline-style: dotted;\n}\n#todo-list #new-task::after {\n  content: \"⠇\";\n  position: absolute;\n  right: 10px;\n  top: 100px;\n}\n#todo-list li {\n  padding: 10px;\n  list-style-type: none;\n  border-bottom: 1px solid gray;\n  display: flex;\n  gap: 20px;\n  position: relative;\n}\n#todo-list li .edit {\n  font-weight: 1000;\n  color: green;\n  position: absolute;\n  right: 50px;\n  cursor: pointer;\n}\n#todo-list li .delete {\n  font-weight: 1000;\n  color: red;\n  position: absolute;\n  right: 15px;\n  cursor: pointer;\n}\n#todo-list .edit-task {\n  width: 100%;\n  border: none;\n  font-size: 18px;\n  outline: 1px solid red;\n  outline-style: dotted;\n  background-color: transparent;\n}\n#todo-list .edit-highlight {\n  background-color: yellowgreen;\n}", "",{"version":3,"sources":["webpack://./src/styles/main.scss"],"names":[],"mappings":"AAAA,gBAAgB;AAMhB;EACE,SAAA;EACA,UAAA;EACA,sBAAA;AAHF;;AAMA;EACE,yBAXc;EAYd,iCAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,uBAAA;EACA,aAAA;EACA,gBAAA;EACA,SAAA;EACA,aAAA;AAHF;;AAMA;EACE,sBAvBgB;EAwBhB,mBAAA;EACA,wEAxBW;EAyBX,aAAA;EACA,sBAAA;EACA,SAAA;EACA,kBAAA;EACA,eAAA;EACA,YAAA;AAHF;;AAMA;EACE,SAAA;EACA,YAAA;EACA,kBAAA;EACA,mBAAA;AAHF;;AAMA;EACE,YAAA;EACA,mBAAA;EACA,kBAAA;AAHF;;AAMA;EACE,eAAA;EACA,mBAAA;EACA,iBAAA;EACA,iBAAA;EACA,gBAAA;AAHF;;AAMA;EACE,yBAzDc;EA0Dd,cAAA;EACA,SAAA;EACA,mBAAA;EACA,uEAAA;EACA,kBAAA;EACA,eAAA;EACA,eAAA;AAHF;AAKE;EACE,sBAAA;AAHJ;AAME;EACE,UAAA;AAJJ;;AAQA;EACE,aAAA;EACA,sBAAA;AALF;AAOE;EACE,YAAA;EACA,WAAA;EACA,YAAA;EACA,eAAA;EACA,kBAAA;EACA,6BAAA;EACA,kBAAA;AALJ;AAOI;EACE,kBAAA;AALN;AAQI;EACE,gCAAA;EACA,qBAAA;AANN;AASI;EACE,YAAA;EACA,kBAAA;EACA,WAAA;EACA,UAAA;AAPN;AAWE;EACE,aAAA;EACA,qBAAA;EACA,6BAAA;EACA,aAAA;EACA,SAAA;EACA,kBAAA;AATJ;AAWI;EACE,iBAAA;EACA,YAAA;EACA,kBAAA;EACA,WAAA;EACA,eAAA;AATN;AAYI;EACE,iBAAA;EACA,UAAA;EACA,kBAAA;EACA,WAAA;EACA,eAAA;AAVN;AAcE;EACE,WAAA;EACA,YAAA;EACA,eAAA;EACA,sBAAA;EACA,qBAAA;EACA,6BAAA;AAZJ;AAeE;EACE,6BAAA;AAbJ","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');\r\n\r\n$primary-color: #dddada;\r\n$secondary-color: #fff;\r\n$box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);\r\n\r\n* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background-color: $primary-color;\r\n  font-family: 'Roboto', sans-serif;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  height: 100vh;\r\n  overflow: hidden;\r\n  margin: 0;\r\n  padding: 20px;\r\n}\r\n\r\n.container {\r\n  background-color: $secondary-color;\r\n  border-radius: 10px;\r\n  box-shadow: $box-shadow;\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 15px;\r\n  padding: 50px 20px;\r\n  max-width: 100%;\r\n  width: 700px;\r\n}\r\n\r\nh1 {\r\n  margin: 0;\r\n  opacity: 0.5;\r\n  align-self: center;\r\n  letter-spacing: 2px;\r\n}\r\n\r\nimg {\r\n  width: 100px;\r\n  margin-bottom: 20px;\r\n  align-self: center;\r\n}\r\n\r\n.joke {\r\n  font-size: 30px;\r\n  letter-spacing: 1px;\r\n  line-height: 40px;\r\n  margin: 50px auto;\r\n  max-width: 600px;\r\n}\r\n\r\n.btn {\r\n  background-color: $primary-color;\r\n  color: #794242;\r\n  border: 0;\r\n  border-radius: 10px;\r\n  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);\r\n  padding: 14px 40px;\r\n  font-size: 16px;\r\n  cursor: pointer;\r\n\r\n  &:active {\r\n    transform: scale(0.98);\r\n  }\r\n\r\n  &:focus {\r\n    outline: 0;\r\n  }\r\n}\r\n\r\n#todo-list {\r\n  display: flex;\r\n  flex-direction: column;\r\n\r\n  & #new-task {\r\n    height: 30px;\r\n    width: 100%;\r\n    border: none;\r\n    font-size: 18px;\r\n    padding-left: 10px;\r\n    border-bottom: 1px solid gray;\r\n    position: relative;\r\n\r\n    &::placeholder {\r\n      font-style: italic;\r\n    }\r\n\r\n    &:focus {\r\n      outline: 0.3px solid greenyellow;\r\n      outline-style: dotted;\r\n    }\r\n\r\n    &::after{\r\n      content: '\\2807';\r\n      position: absolute;\r\n      right: 10px;\r\n      top: 100px;\r\n    }\r\n  }\r\n\r\n  & li {\r\n    padding: 10px;\r\n    list-style-type: none;\r\n    border-bottom: 1px solid gray;\r\n    display: flex;\r\n    gap: 20px;\r\n    position: relative;\r\n\r\n    & .edit {\r\n      font-weight: 1000;\r\n      color: green;\r\n      position: absolute;\r\n      right: 50px;\r\n      cursor: pointer;\r\n    }\r\n\r\n    & .delete {\r\n      font-weight: 1000;\r\n      color: red;\r\n      position: absolute;\r\n      right: 15px;\r\n      cursor: pointer;\r\n    }\r\n  }\r\n\r\n  & .edit-task {\r\n    width: 100%;\r\n    border: none;\r\n    font-size: 18px;\r\n    outline: 1px solid red;\r\n    outline-style: dotted;\r\n    background-color: transparent;\r\n  }\r\n\r\n  & .edit-highlight {\r\n    background-color: yellowgreen;\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -4875,9 +4882,8 @@ document.addEventListener('DOMContentLoaded', _modules_ui_js__WEBPACK_IMPORTED_M
 
 // Event: Add a task
 document.querySelector('#add-form').addEventListener('keypress', function (e) {
-  // prevent default submit
-
   if (e.key === 'Enter') {
+    // prevent default submit
     e.preventDefault();
     // get form values
     _modules_ui_js__WEBPACK_IMPORTED_MODULE_3__["default"].getNewTask();
@@ -4888,7 +4894,6 @@ document.querySelector('#add-form').addEventListener('keypress', function (e) {
 document.querySelector('#todo-list').addEventListener('click', function (e) {
   // remove task from Store
   _modules_store_js__WEBPACK_IMPORTED_MODULE_4__["default"].removeTask(e.target);
-
   // remove task from UI
   _modules_ui_js__WEBPACK_IMPORTED_MODULE_3__["default"].deleteTask(e.target);
 });
@@ -4897,6 +4902,19 @@ document.querySelector('#todo-list').addEventListener('click', function (e) {
 document.querySelector('#todo-list').addEventListener('click', function (e) {
   if (e.target.classList.contains('fa-pen-to-square')) {
     _modules_ui_js__WEBPACK_IMPORTED_MODULE_3__["default"].editTask(e.target);
+  }
+});
+
+// Event: update a task
+document.querySelector('#todo-list').addEventListener('keypress', function (e) {
+  // prevent default submit
+
+  if (e.key === 'Enter' && e.target.classList.contains('edit-task')) {
+    // prevent default submit
+    e.preventDefault();
+    // update to the store
+    _modules_store_js__WEBPACK_IMPORTED_MODULE_4__["default"].updateTask(e.target);
+    window.location.reload();
   }
 });
 
