@@ -19,13 +19,27 @@ class Store {
       localStorage.setItem('tasks', JSON.stringify(tasks));
     }
 
-    static removeTask = (id) => {
-      const tasks = Store.getTasks();
+    // static updateTask = (el, editedTask) => {
+    //   const tasks = Store.getTasks();
+    //   const li = el.parentElement.parentElement;
+    //   const todoList = document.getElementById('todo-list');
+    //   const id = Array.prototype.indexOf.call(todoList.children, li);
+    // }
 
-      tasks.forEach((task, index) => {
-        if (task.index === id) {
-          tasks.splice(index, 1);
+    static removeTask = (el) => {
+      const tasks = Store.getTasks();
+      const li = el.parentElement.parentElement;
+      const todoList = document.getElementById('todo-list');
+      const id = Array.prototype.indexOf.call(todoList.children, li);
+
+      tasks.forEach((task, i) => {
+        if (task.index === id && el.classList.contains('fa-trash')) {
+          tasks.splice(i, 1);
         }
+      });
+
+      tasks.forEach((task, i) => {
+        task.index = i + 1;
       });
 
       localStorage.setItem('tasks', JSON.stringify(tasks));
