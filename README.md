@@ -129,7 +129,12 @@ Install this project with:
       npm run dev
 
 ### Run tests
-    npx eslint .
+- Run the following script and style test:
+
+      npx eslint .
+      npx stylelint "**/*.{css,scss}"
+ 
+
 
 ### Deployment
 
