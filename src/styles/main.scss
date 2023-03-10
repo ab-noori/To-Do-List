@@ -79,30 +79,14 @@ img {
   display: flex;
   flex-direction: column;
 
-  & li {
-    padding: 10px;
-    list-style-type: none;
-    border-bottom: 1px solid gray;
-    display: flex;
-    gap: 20px;
-    position: relative;
-
-    &::after {
-      content: '\2807';
-      font-size: 20px;
-      position: absolute;
-      top: 5px;
-      right: 5px;
-    }
-  }
-
-  & #add-new-task {
+  & #new-task {
     height: 30px;
     width: 100%;
     border: none;
     font-size: 18px;
     padding-left: 10px;
     border-bottom: 1px solid gray;
+    position: relative;
 
     &::placeholder {
       font-style: italic;
@@ -112,5 +96,43 @@ img {
       outline: 0.3px solid greenyellow;
       outline-style: dotted;
     }
+  }
+
+  & li {
+    padding: 10px;
+    list-style-type: none;
+    border-bottom: 1px solid gray;
+    display: flex;
+    gap: 20px;
+    position: relative;
+
+    & .edit {
+      font-weight: 1000;
+      color: green;
+      position: absolute;
+      right: 50px;
+      cursor: pointer;
+    }
+
+    & .delete {
+      font-weight: 1000;
+      color: red;
+      position: absolute;
+      right: 15px;
+      cursor: pointer;
+    }
+  }
+
+  & .edit-task {
+    width: 100%;
+    border: none;
+    font-size: 18px;
+    outline: 1px solid red;
+    outline-style: dotted;
+    background-color: transparent;
+  }
+
+  & .edit-highlight {
+    background-color: yellowgreen;
   }
 }
