@@ -79,6 +79,25 @@ img {
   display: flex;
   flex-direction: column;
 
+  & #new-task {
+    height: 30px;
+    width: 100%;
+    border: none;
+    font-size: 18px;
+    padding-left: 10px;
+    border-bottom: 1px solid gray;
+    position: relative;
+
+    &::placeholder {
+      font-style: italic;
+    }
+
+    &:focus {
+      outline: 0.3px solid greenyellow;
+      outline-style: dotted;
+    }
+  }
+
   & li {
     padding: 10px;
     list-style-type: none;
@@ -93,8 +112,8 @@ img {
       position: absolute;
       right: 50px;
       cursor: pointer;
-    }    
-    
+    }
+
     & .delete {
       font-weight: 1000;
       color: red;
@@ -104,29 +123,16 @@ img {
     }
   }
 
-  & #new-task {
-    height: 30px;
-    width: 100%;
-    border: none;
-    font-size: 18px;
-    padding-left: 10px;
-    border-bottom: 1px solid gray;
-
-    &::placeholder {
-      font-style: italic;
-    }
-
-    &:focus {
-      outline: 0.3px solid greenyellow;
-      outline-style: dotted;
-    }
-  }
-
-  & #edit-task{
+  & .edit-task {
     width: 100%;
     border: none;
     font-size: 18px;
     outline: 1px solid red;
     outline-style: dotted;
+    background-color: transparent;
+  }
+
+  & .edit-highlight {
+    background-color: yellowgreen;
   }
 }
