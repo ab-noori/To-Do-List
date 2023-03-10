@@ -65,7 +65,7 @@ class UI {
     el.parentElement.parentElement.childNodes[1].innerHTML = `
 
     <form id="edit-form">
-        <input type="text" id="edit-task" value="${orgValue}">
+        <input type="text" class="edit-task" value="${orgValue}">
     </form>
 
     `;
