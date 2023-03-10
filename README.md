@@ -2,15 +2,6 @@
 
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-<div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="./src/assets/project-image.png" alt="logo" width="500"  height="auto" />
-  <br/>
-
-  <h3><b></b></h3>
-
-</div>
-
 <!-- Open pull request using the following structure
 
   ## Project title: subtitle
@@ -30,7 +21,7 @@
 
 | Desktop Veiw Representation|
 |---------------------------------------|
-|![screenshot](./src/assets/project-image.png)|
+|![screenshot](./src/assets/project-shot.PNG)|
 
 <!-- TABLE OF CONTENTS -->
 
