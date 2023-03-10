@@ -13,9 +13,8 @@ document.addEventListener('DOMContentLoaded', UI.displaytasks);
 
 // Event: Add a task
 document.querySelector('#add-form').addEventListener('keypress', (e) => {
-  // prevent default submit
-
   if (e.key === 'Enter') {
+    // prevent default submit
     e.preventDefault();
     // get form values
     UI.getNewTask();
@@ -26,7 +25,6 @@ document.querySelector('#add-form').addEventListener('keypress', (e) => {
 document.querySelector('#todo-list').addEventListener('click', (e) => {
   // remove task from Store
   Store.removeTask(e.target);
-
   // remove task from UI
   UI.deleteTask(e.target);
 });
@@ -35,6 +33,19 @@ document.querySelector('#todo-list').addEventListener('click', (e) => {
 document.querySelector('#todo-list').addEventListener('click', (e) => {
   if (e.target.classList.contains('fa-pen-to-square')) {
     UI.editTask(e.target);
+  }
+});
+
+// Event: update a task
+document.querySelector('#todo-list').addEventListener('keypress', (e) => {
+  // prevent default submit
+
+  if (e.key === 'Enter' && e.target.classList.contains('edit-task')) {
+    // prevent default submit
+    e.preventDefault();
+    // update to the store
+    Store.updateTask(e.target);
+    window.location.reload();
   }
 });
 
