@@ -86,9 +86,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
-
-- [Live Demo Link](https://ab-noori.github.io/Webpack-Boilerplate/dist/)
+> - [Live Demo Link](https://ab-noori.github.io/Webpack-Boilerplate/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
