@@ -38,8 +38,18 @@ class UI {
     const span = document.createElement('span');
     span.textContent = task.description;
 
+    const editBtn = document.createElement('span');
+    editBtn.classList.add('edit');
+    editBtn.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
+
+    const deleteBtn = document.createElement('span');
+    deleteBtn.classList.add('delete');
+    deleteBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
+
     li.appendChild(checkbox);
     li.appendChild(span);
+    li.appendChild(editBtn);
+    li.appendChild(deleteBtn);
 
     if (task.completed) {
       li.classList.add('completed');
@@ -48,8 +58,27 @@ class UI {
     list.appendChild(li);
   }
 
+  static editTask = (el) => {
+    const orgValue = el.parentElement.parentElement.childNodes[1].textContent;
+    const editForm = document.createElement('form');
+    editForm.id = 'edit-form';
+    el.parentElement.parentElement.childNodes[1].innerHTML = `
+
+    <form id="edit-form">
+        <input type="text" id="edit-task" value="${orgValue}">
+    </form>
+
+    `;
+
+    el.parentElement.parentElement.classList.add('edit-highlight');
+
+    if (el.classList.contains('fa-trash')) {
+      el.parentElement.parentElement.remove();
+    }
+  }
+
   static deleteTask = (el) => {
-    if (el.classList.contains('delete')) {
+    if (el.classList.contains('fa-trash')) {
       el.parentElement.parentElement.remove();
     }
   }
