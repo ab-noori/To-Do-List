@@ -87,13 +87,20 @@ img {
     gap: 20px;
     position: relative;
 
-    &::after {
-      content: '\2807';
-      cursor: pointer;
-      font-size: 20px;
+    & .edit {
+      font-weight: 1000;
+      color: green;
       position: absolute;
-      top: 5px;
-      right: 5px;
+      right: 50px;
+      cursor: pointer;
+    }    
+    
+    & .delete {
+      font-weight: 1000;
+      color: red;
+      position: absolute;
+      right: 15px;
+      cursor: pointer;
     }
   }
 
@@ -113,5 +120,13 @@ img {
       outline: 0.3px solid greenyellow;
       outline-style: dotted;
     }
+  }
+
+  & #edit-task{
+    width: 100%;
+    border: none;
+    font-size: 18px;
+    outline: 1px solid red;
+    outline-style: dotted;
   }
 }
