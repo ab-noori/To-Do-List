@@ -1,8 +1,8 @@
-import generateJoke from './generateJoke.js';
 import './styles/main.scss';
 import todoIcom from './assets/todo-list.svg';
 import UI from './modules/ui.js';
 import Store from './modules/store.js';
+import Status from './modules/status.js';
 
 // Todo List Icon
 const laughImg = document.getElementById('laughImg');
@@ -36,6 +36,13 @@ document.querySelector('#todo-list').addEventListener('click', (e) => {
   }
 });
 
+// Check task as completed
+document.querySelector('#todo-list').addEventListener('change', (e) => {
+  if (e.target.classList.contains('checkbox')) {
+    Status.isCompleted(e.target);
+  }
+});
+
 // Event: update a task
 document.querySelector('#todo-list').addEventListener('keypress', (e) => {
   // prevent default submit
@@ -49,7 +56,8 @@ document.querySelector('#todo-list').addEventListener('keypress', (e) => {
   }
 });
 
-// Remove later
-generateJoke();
-const jokeBtn = document.getElementById('jokBtn');
-jokeBtn.addEventListener('click', generateJoke);
+// Remove all completed tasks
+document.getElementById('jokBtn').addEventListener('click', () => {
+  Status.clearCompleted();
+  window.location.reload();
+});
