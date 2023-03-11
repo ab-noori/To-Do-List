@@ -34,6 +34,10 @@ class UI {
 
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
+    checkbox.classList.add('checkbox');
+    if (task.completed) {
+      checkbox.checked = true;
+    }
 
     const span = document.createElement('span');
     span.textContent = task.description;
@@ -52,7 +56,7 @@ class UI {
     li.appendChild(deleteBtn);
 
     if (task.completed) {
-      li.classList.add('completed');
+      li.childNodes[1].classList.add('completed');
     }
 
     list.appendChild(li);
