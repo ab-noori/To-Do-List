@@ -123,6 +123,11 @@ img {
     }
   }
 
+  & .completed {
+    text-decoration: line-through;
+    text-decoration-color: red;
+  }
+
   & .edit-task {
     width: 100%;
     border: none;
